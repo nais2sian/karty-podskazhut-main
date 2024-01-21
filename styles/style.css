@@ -1,0 +1,267 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.page {
+  width: 1485px;
+  margin: auto;
+  min-inline-size: 360px;
+}
+
+p,
+h1,
+h2,
+h3,
+blockquote,
+ul,
+ol,
+li,
+figure {
+  margin: 0;
+}
+
+:root {
+  --bg-color: #F3EFEC;
+  --text-color: #312A4E;
+  --accent-color: #FFAB6B; 
+  --main-font: 'Raleway', sans-serif;
+  --accent-font: 'STIX Two Text'; 
+}
+
+.page {
+  color: var(--text-color);
+  font-family: var(--main-font);
+  background-color: var(--bg-color);
+  min-inline-size: 360px;
+}
+
+.heading {
+  font-family: var(--accent-font);
+  font-weight: 600;
+  line-height: 90%; 
+  text-align: center;
+}
+
+.content-section {
+  padding: 0 5vi;
+  font-family: var(--accent-font);
+  text-align: center;
+}
+
+
+.header__title {
+  margin-block-end: 40px;
+  padding-top: 10%;
+  font-size: clamp(3.75rem, 2.5rem + 5.5556vw, 7.5rem);
+}
+
+.content__title {
+  margin: 7% 0 2.5%;
+  font-size: 30px;
+}
+
+.content__text-block {
+  font-size: 18px;
+  text-align: center;
+}
+
+.content__text-block .content__paragraph:not(:last-of-type) {
+  margin-block-end: 1.5em;
+}
+
+.content__paragraph {
+  width: 100%;
+  font-family: var(--main-font);
+  font-size: 1.125rem;
+  text-align: left;
+}
+
+.content__paragraph a {
+  color: inherit; 
+}
+
+
+.content__blockquote {
+  margin: 0 auto 1.5em;
+  font-family: var(--main-font);
+  font-size: 1.125rem;
+  font-style: italic;
+  line-height: 2;
+  text-align: left;
+  inline-size: 75%;
+}
+
+.content__list {
+  padding: 0 0 0 40px;
+  font-family: var(--main-font);
+  font-size: 1.125rem;
+  text-align: left;
+  list-style: none;
+}
+
+.content__list li {
+  position: relative;
+}
+
+.content__list li:not(:last-of-type) {
+  margin-block-end: 10px;
+}
+
+
+.content__list li::before {
+  content: "";
+  position: absolute;
+  margin-block-start: -7.5px;
+  background-image: url('/images/marker-light.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  inline-size: 15px;
+  block-size: 15px;
+  inset-inline-start: -25px;
+  inset-block-start: 50%;
+}
+
+
+.content__text-block_type_first-lettered .content__paragraph:first-of-type::first-letter {
+  display: inline-block;
+  margin-inline-end: 1px; 
+  padding: 0 4px;
+  font-weight: 700;
+  font-size: 30px;
+  background-color: var(--accent-color);
+}
+
+
+.content__figure {
+  position: relative;
+  margin: 7% auto;
+  inline-size: calc(100% + 10vi);
+  inset-inline-end: 5vi; 
+}
+
+.content__picture-caption {
+border-block-end: 1px solid currentColor;
+padding: 20px;
+font-size: 18px;
+text-align: center;
+}
+
+.content__picture {
+  inline-size: 100%;  
+}
+
+.content__card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-block-start: 7%;
+  border: 1px solid var(--text-color);
+  aspect-ratio: 4/3;
+}
+
+.content__card-subtitle { 
+  font-size: 18px;
+}
+
+.content__card-title {
+  font-size: 60px;
+}
+
+.colored-text {
+  position: relative;
+  display: inline-block; 
+}
+
+.colored-text::after {
+  content: '';
+  position: absolute; 
+  z-index: -1;
+  display: flex;
+  background-color: #FFAB6B;
+  inline-size: calc(100% + 8px);
+  block-size: 0.5ch;
+  inset-block-end: 0.3ch;
+  inset-block-start: -4px;
+}
+
+.header__menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-block-start: 1px solid currentColor;
+  border-block-end: 1px solid currentColor;
+  padding-block: 20px;
+}
+
+.header__logo {
+  display: flex;
+  align-items: center;
+}
+
+.header__theme-toggler {
+  display:flex;
+  gap: 20px;
+  padding: 0;
+  list-style: none;
+}
+
+.header__theme-button {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  border: none;
+  padding: 0;
+  color: var(--text-color);
+  font-family: inherit;
+  font-size: 18px;
+  list-style: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.header__theme-button_type_dark {
+  border: none;
+  font-family: inherit;
+  font-size: 18px;
+}
+
+.header__theme-button:hover {
+  text-decoration: underline;
+
+}
+
+.header__theme-button_is-active {
+  font-weight: 700;
+}
+
+.header__theme-button_is-active::after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  display: flex;
+  background-color: #FFAB6B;
+  inline-size: calc(100% + 8px);
+  block-size: 0.5ch;
+  inset-block-end: 0.3ch;
+}
+
+.footer {
+  margin-block-start: 10%;
+  border-block-start: 1px solid currentColor;
+  padding: 2.5%;
+  text-align: center;
+}
+
+.footer__copyright {
+  font-size: 18px;
+}
+
+.theme_dark {
+  --bg-color: #171717;
+  --text-color:#b3b3b3;
+  --accent-color: transparent;
+}
